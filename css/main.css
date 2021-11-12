@@ -1,0 +1,816 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  display: flex;
+}
+
+nav ul img{
+  width: 150px;
+}
+
+.div_nav_menu {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  right: 12%;
+}
+
+.div_nav_menu p {
+  font-family: 'Raleway', sans-serif;
+  margin-right: 15px;
+  margin-left: 15px;
+  font-size: 12px;
+  color: #222222;
+  font-weight: 600;
+}
+
+.div_nav_menu p:hover {
+  color: #b68178;
+}
+
+.div_nav_menu p:active {
+  color: #b68178;
+}
+
+main {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div_hero {
+  max-width: 40%;
+  margin-bottom: 350px;
+  margin-top: 200px;
+}
+
+.div_hero h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 90px;
+  font-weight: 500;
+  line-height: 1;
+  color: #636363;
+  margin: 0;
+  padding: 0;
+}
+
+.div_hero h6 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color: #b68178;
+  font-size: 11px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+.div_hero p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color: #636363;
+  font-size: 16px;
+  max-width: 60%;
+  margin-left: auto;
+}
+
+#img_hero {
+  float: right;
+  position: relative;
+  top: -140px;
+  left: -50px;
+}
+
+.div_hero_img img {
+  width: 650px;
+}
+
+.div_make {
+  max-width: 35%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 160px;
+}
+
+.div_make h4 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  color: #636363;
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+.div_make p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color: #636363;
+  font-size: 16px;
+  max-width: 60%;
+  line-height: 21px;
+  margin-left: auto;
+  margin-bottom: 15px;
+}
+
+.div_coldy {
+  max-width: 35%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 160px;
+}
+
+.div_coldy h4 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  color: #636363;
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+.div_coldy p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color: #636363;
+  font-size: 16px;
+  max-width: 60%;
+  line-height: 21px;
+  margin-left: auto;
+  margin-bottom: 15px;
+}
+
+.div_command {
+  max-width: 35%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 550px;
+}
+
+.div_command h4 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  color: #636363;
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+.div_command p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color: #636363;
+  font-size: 16px;
+  max-width: 60%;
+  line-height: 21px;
+  margin-left: auto;
+  margin-bottom: 15px;
+}
+
+.img_command img {
+  max-width: 45%;
+}
+
+.progr_loyalty {
+  max-width: 35%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 160px;
+}
+
+.progr_loyalty h4 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  color: #636363;
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+.progr_loyalty p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color: #636363;
+  font-size: 16px;
+  max-width: 60%;
+  line-height: 21px;
+  margin-left: auto;
+  margin-bottom: 15px;
+}
+
+#img_coldy {
+  float: left;
+  position: relative;
+  top: 290px;
+}
+
+footer {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  margin-top: 300px;
+  margin-bottom: 50px;
+  justify-content: space-between;
+}
+
+.foot_inf {
+  margin-right: 30px;
+}
+
+.foot_inf p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color: #636363;
+  font-size: 12px;
+  line-height: 13px;
+  margin-bottom: 20px;
+  padding: 0px;
+}
+
+.foot_inf h5 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color: #222222;
+  font-size: 22px;
+  line-height: 21px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.foot_menu {
+  display: flex;
+}
+
+
+
+/* //////////////// PROJECTS PAGE ///////////////////*/
+
+#pr_niceloft {
+  width: 47%;
+  height: 820px;
+  background: url(/../img/pr_niceloft.png) rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+  margin-right: 40px;
+  padding: 0;
+  float: left;
+}
+
+.projects h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 90px;
+  font-weight: 500;
+  line-height: 1;
+  color: #ffffff;
+  margin: 0;
+  padding-left: 20px;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+
+.projects p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  padding-left: 20px;
+  margin: 0;
+}
+
+#pr_kazakov {
+  width: 47%;
+  height: 820px;
+  background: url(/../img/pr_kazakov.png) rgba(13%, 13%, 13%, 0.3);
+  margin-top: 20px;
+  padding: 0;
+  float: left;
+}
+
+
+/* //////////////// N'ICE LOFT PAGE ///////////////////*/
+
+.niceloft_hero {
+  margin-bottom: 70px;
+}
+
+.niceloft_hero h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 135px;
+  font-weight: 500;
+  line-height: 1;
+  color: #636363;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  text-align: center;
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.niceloft_hero img {
+  max-width: 100%;
+}
+
+.niceloft_strong {
+  max-width: 70%;
+  margin-bottom: 100px;
+}
+
+.nl_thesis_img img {
+  max-width: 100%;
+}
+
+.niceloft_strong h4 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 80px;
+  font-weight: 400;
+  color: #636363;
+  margin: 0;
+  padding: 0;
+}
+
+.niceloft_strong p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #636363;
+  line-height: 1.4;
+  padding-left: 20px;
+  margin: 0;
+  max-width: 30%;
+  margin-left: auto;
+}
+
+.pr_thesis {
+  max-width: 83%;
+}
+
+.thesis_block {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 40%;
+  margin-left: auto;
+}
+
+#nl_thesis_1 {
+  margin-right: 50px;
+  margin-bottom: 80px;
+}
+
+#nl_thesis_2 {
+  margin-right: 50px;
+  margin-bottom: 80px;
+}
+
+.nl_thesis h5 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+  color: #636363;
+  padding: 0;
+  margin: 0;
+}
+
+.nl_thesis p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #bbbbbb;
+  margin: 0;
+  padding: 0;
+}
+
+.nl_next_project {
+  margin-top: 100px;
+  background: #f9f9f9;
+}
+
+.nl_next_project p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #c4c4c4;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 12%;
+  padding-top: 80px;
+}
+
+.nl_next_project h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 130px;
+  font-weight: 500;
+  color: #636363;
+  padding: 0;
+  max-width: 96%;
+  margin: 0 auto;
+}
+
+.nextpr_img {
+  max-width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 80px;
+}
+
+.nextpr_img img {
+  width: 430px;
+  height: 430px;
+}
+
+.kaz_next_project {
+  margin-top: 100px;
+  background: #f9f9f9;
+}
+
+.kaz_next_project p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #c4c4c4;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 12%;
+  padding-top: 80px;
+}
+
+.kaz_next_project h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 130px;
+  font-weight: 500;
+  color: #636363;
+  padding: 0;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.kaz_nextpr_img {
+  max-width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 80px;
+}
+
+.kaz_nextpr_img img {
+  width: 430px;
+  height: 430px;
+}
+
+
+
+/* //////////////// SIGN IN PAGE ///////////////////*/
+.main_signin {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  padding: 50px;
+  background: #f9f9f9;
+}
+
+.main_signin img {
+  max-width: 50%;
+}
+
+.signin_form {
+  max-width: 50%;
+  margin-right: auto;
+  margin-top: 150px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.signing_but {
+  margin-top: 20px;
+}
+
+.signin_form h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #636363;
+}
+
+
+/* //////////////// REGISTRATION PAGE ///////////////////*/
+
+
+.reg_form {
+  max-width: 50%;
+  margin-right: auto;
+  margin-top: 150px;
+}
+
+.reg_form h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #636363;
+}
+
+.col {
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
